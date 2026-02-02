@@ -7,9 +7,26 @@ public class Application {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println();
+        System.out.println("Voici mon jeu de bataille navale !");
+        System.out.println("Les navires ennemis sont générés aléatoirement");
+        System.out.println();
+        System.out.println("Pour commencer, voici un aperçu du plateau :");
+        System.out.println();
+
         displayGame();
+        System.out.println();
+
+        gameLogic(scanner);
 
         scanner.close();
+    }
+
+    public static void gameLogic(Scanner scanner) {
+        System.out.println("Sur quelles cases souhaitez-vous tirer ?");
+        System.out.println("Sélectionnez une lettre (POUR CHOISIR LA COLONNE (de A à J))");
+        System.out.println("Suivi d'un chiffre (POUR CHOISIR LA LIGNE (de 1 à 10)) :");
+        String columnUser = scanner.nextLine();
     }
 
     public static void displayGame() {
