@@ -36,7 +36,7 @@ public class Application {
         app.initGrid();
         app.placeFleet(); // placement des bateaux
 
-        while (true) {
+        while (!app.hasWon()) {
             app.displayGrid();
             app.displayLegend();
 
@@ -307,5 +307,19 @@ public class Application {
                 }
             }
         }
+    }
+
+    public boolean hasWon() {
+        for (int r = 0; r < 10; r++) {
+            for (int c = 0; c < 10; c++) {
+
+                // il y a un bateau ici et il n'est pas touché
+                if (shipId[r][c] != 0 && !hit[r][c]) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
